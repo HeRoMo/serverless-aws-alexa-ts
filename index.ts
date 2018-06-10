@@ -4,7 +4,7 @@ import { Context, Handler } from "aws-lambda";
 
 let skill: Alexa.Skill;
 
-export const hello: Handler = async (event: RequestEnvelope, context: Context) => {
+export const handler: Handler = async (event: RequestEnvelope, context: Context) => {
   if (!skill) {
     skill = Alexa.SkillBuilders.custom()
       .addRequestHandlers(

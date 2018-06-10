@@ -17,8 +17,8 @@ provider:
   stage: develop
 
 functions:
-  handler:
-    handler: handler.hello
+  handler:
+    handler: index.handler
     events:
       - alexaSkill
     environment:
