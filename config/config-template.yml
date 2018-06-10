@@ -1,3 +1,4 @@
-development:
+develop:
+  timezone: Asia/Tokyo
   alexa:
     APP_ID: 'your-skill-id'
