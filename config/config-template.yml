@@ -1,0 +1,3 @@
+development:
+  alexa:
+    APP_ID: 'your-skill-id'

@@ -7,3 +7,6 @@ jspm_packages
 
 # Webpack directories
 .webpack
+
+config/*
+!config/config-template.yml
