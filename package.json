@@ -17,6 +17,7 @@
     "@types/node": "^8.10.21",
     "@types/source-map-support": "^0.4.1",
     "@types/webpack": "^4.4.5",
+    "ask-cli": "^1.4.0",
     "serverless": "^1.28.0",
     "serverless-webpack": "^5.2.0",
     "ts-loader": "^4.4.2",
