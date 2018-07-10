@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "./node_modules/.bin/serverless deploy",
     "package": "./node_modules/.bin/serverless package",
-    "ask:get-model": "ask api get-model -s $npm_config_skill_id -l ja-JP > skill/model_ja-JP.json",
-    "ask:update-model": "ask api update-model -s $npm_config_skill_id -l ja-JP -f skill/model_ja-JP.json"
+    "ask:get-model": "ask api get-model -s $npm_config_skill_id -l ja-JP > interaction_models/model_ja-JP.json",
+    "ask:update-model": "ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
   },
   "dependencies": {
     "ask-sdk": "^2.0.7",
