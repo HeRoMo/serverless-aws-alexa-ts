@@ -1,5 +1,6 @@
 # package directories
 node_modules
+.npmrc
 jspm_packages
 
 # Serverless directories
@@ -8,5 +9,8 @@ jspm_packages
 # Webpack directories
 .webpack
 
+# jest
+coverage
+
 config/*
-!config/config-template.yml
+!config/config.yml.template

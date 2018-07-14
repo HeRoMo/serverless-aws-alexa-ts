@@ -1,56 +1,33 @@
-import * as Alexa from "ask-sdk";
-import { RequestEnvelope, ResponseEnvelope, services } from "ask-sdk-model";
-import { Context, Handler } from "aws-lambda";
+import { HandlerInput, SkillBuilders } from "ask-sdk";
+import { Handler } from "aws-lambda";
 
-let skill: Alexa.Skill;
+import CancelAndStopIntentHandler from "./src/handlers/CancelAndStopIntentHandler";
+import ErrorHandler from "./src/handlers/ErrorHandler";
+import HelloIntentHandler from "./src/handlers/HelloIntentHandler";
+import HelpIntentHandler from "./src/handlers/HelpIntentHandler";
+import LaunchRequestHandler from "./src/handlers/LaunchRequestHandler";
 
-export const handler: Handler = async (event: RequestEnvelope, context: Context) => {
-  if (!skill) {
-    skill = Alexa.SkillBuilders.custom()
-      .addRequestHandlers(
-        LaunchRequestHandler,
-        HelloIntentHandler)
-      .addErrorHandlers(ErrorHandler)
-      .create();
-  }
-  return skill.invoke(event, context);
-};
+// uncomment if you use dynamodb local
+// import * as AWS from "aws-sdk";
+// if (process.env.IS_LOCAL) {
+//   AWS.config.update({
+//     accessKeyId: "dummy",
+//     dynamodb: {
+//       endpoint: "http://localhost:8100",
+//       region: "us-east-1",
+//     },
+//     secretAccessKey: "dummy",
+//   });
+// }
 
-const LaunchRequestHandler = {
-    canHandle(handlerInput: Alexa.HandlerInput) {
-      return handlerInput.requestEnvelope.request.type === "LaunchRequest";
-  },
-  handle(handlerInput: Alexa.HandlerInput) {
-      const speechText = "Welcome to the Alexa Skills Kit, you can say hello!";
-      return handlerInput.responseBuilder
-          .speak(speechText)
-          .reprompt(speechText)
-          .withSimpleCard("Hello World", speechText)
-          .getResponse();
-  },
-};
-
-const HelloIntentHandler = {
-  canHandle(handlerInput: Alexa.HandlerInput) {
-      return handlerInput.requestEnvelope.request.type === "IntentRequest"
-          && handlerInput.requestEnvelope.request.intent.name === "HelloIntent";
-  },
-  handle(handlerInput: Alexa.HandlerInput) {
-      const speechText = "Hello!";
-      return handlerInput.responseBuilder
-          .speak(speechText)
-          .withSimpleCard("Hello!", speechText)
-          .getResponse();
-  },
-};
-
-const ErrorHandler = {
-  canHandle(handlerInput: Alexa.HandlerInput, error: Error) {
-      return true;
-  },
-  handle(handlerInput: Alexa.HandlerInput, error: Error) {
-      return handlerInput.responseBuilder
-          .speak("error")
-          .getResponse();
-  },
-};
+export const handler: Handler = SkillBuilders.standard()
+    .addRequestHandlers(
+      LaunchRequestHandler,
+      HelloIntentHandler,
+      HelpIntentHandler,
+      CancelAndStopIntentHandler,
+    )
+    .addErrorHandlers(ErrorHandler)
+    // .withTableName(process.env.DYNAMODB_TABLE) // uncomment if you use dynamodb
+    // .withAutoCreateTable(true)
+    .lambda();

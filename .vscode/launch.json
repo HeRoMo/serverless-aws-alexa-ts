@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Tests",
+        "program": "${workspaceRoot}/node_modules/.bin/jest",
+        "cwd": "${workspaceRoot}",
+        "args": [
+            "--i",
+            "--config",
+            "jest.json"
+        ],
+        "outFiles": [
+          "${workspaceRoot}/.webpack/service/*.js"
+        ],
+        "sourceMaps": true,
+        "preLaunchTask": "npm: compile"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "LaunchRequest",
+        "program": "${workspaceRoot}/node_modules/.bin/sls",
+        "cwd": "${workspaceRoot}",
+        "args": [
+          "invoke",
+          "local",
+          "-f",
+          "handler",
+          "-p",
+          "./__tests__/fixtures/LaunchRequest.json"
+        ],
+        "outFiles": [
+          "${workspaceRoot}/.webpack/service/*.js"
+        ],
+        "sourceMaps": true
+      }
+    ]
+}

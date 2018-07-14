@@ -1,0 +1,36 @@
+{
+	"version": "1.0",
+	"session": {
+		"new": true,
+		"sessionId": "amzn1.echo-api.session.dummy-session-id",
+		"application": {
+			"applicationId": "amzn1.ask.skill.dummy-application-id"
+		},
+		"user": {
+			"userId": "amzn1.ask.account.DUMMY_USER_ID"
+		}
+	},
+	"context": {
+		"System": {
+			"application": {
+				"applicationId": "amzn1.ask.skill.dummy-application-id"
+			},
+			"user": {
+				"userId": "amzn1.ask.account.DUMMY_USER_ID"
+			},
+			"device": {
+				"deviceId": "amzn1.ask.device.DUMMY_DEVICE_ID",
+				"supportedInterfaces": {}
+			},
+			"apiEndpoint": "https://api.fe.amazonalexa.com",
+			"apiAccessToken": "dummy.api.access.id"
+		}
+	},
+	"request": {
+		"type": "LaunchRequest",
+		"requestId": "amzn1.echo-api.request.dummy-request-id",
+		"timestamp": "2018-07-10T12:19:36Z",
+		"locale": "ja-JP",
+		"shouldLinkResultBeReturned": false
+	}
+}
