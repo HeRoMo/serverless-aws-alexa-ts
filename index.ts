@@ -7,7 +7,7 @@ import HelloIntentHandler from "./src/handlers/HelloIntentHandler";
 import HelpIntentHandler from "./src/handlers/HelpIntentHandler";
 import LaunchRequestHandler from "./src/handlers/LaunchRequestHandler";
 
-// uncomment if you use dynamodb and use invoke local
+// uncomment if you use dynamodb local
 // import * as AWS from "aws-sdk";
 // if (process.env.IS_LOCAL) {
 //   AWS.config.update({

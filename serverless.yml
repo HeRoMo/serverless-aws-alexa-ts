@@ -7,10 +7,9 @@ plugins:
   - serverless-webpack
 
 custom:
-  # uncomment if you use dynamodb
-  # dynamodb:
-  #   start:
-  #     port: 8100
+  dynamodb: # config for serverless-dynamodb-local
+    start:
+      port: 8100
   webpack:
     webpackConfig: 'webpack.config.ts'
 
@@ -21,7 +20,7 @@ provider:
   memorySize: 128
   timeout: 60
   stage: develop
-  # uncomment if you use dynamodb
+  # uncomment if you use dynamodb on aws
   # iamRoleStatements:
   #   - Effect: "Allow"
   #     Action:
