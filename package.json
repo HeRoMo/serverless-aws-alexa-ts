@@ -4,6 +4,7 @@
   "description": "A template of Serverless framework for Alexa skill",
   "main": "index.js",
   "scripts": {
+    "compile": "./node_modules/.bin/serverless webpack",
     "test": "./node_modules/.bin/jest --config jest.json",
     "deploy": "./node_modules/.bin/serverless deploy",
     "package": "./node_modules/.bin/serverless package",

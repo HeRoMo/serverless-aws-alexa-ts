@@ -14,7 +14,12 @@
             "--i",
             "--config",
             "jest.json"
-        ]
+        ],
+        "outFiles": [
+          "${workspaceRoot}/.webpack/service/*.js"
+        ],
+        "sourceMaps": true,
+        "preLaunchTask": "npm: compile"
       },
       {
         "type": "node",
