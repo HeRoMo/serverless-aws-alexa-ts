@@ -3,18 +3,37 @@ service:
 
 # Add the serverless-webpack plugin
 plugins:
+  - serverless-dynamodb-local
   - serverless-webpack
 
 custom:
+  # uncomment if you use dynamodb
+  # dynamodb:
+  #   start:
+  #     port: 8100
   webpack:
     webpackConfig: 'webpack.config.ts'
 
 provider:
   name: aws
+  region: us-east-1
   runtime: nodejs8.10
   memorySize: 128
   timeout: 60
   stage: develop
+  # uncomment if you use dynamodb
+  # iamRoleStatements:
+  #   - Effect: "Allow"
+  #     Action:
+  #       - dynamodb:DescribeTable
+  #       - dynamodb:CreateTable
+  #       - dynamodb:Query
+  #       - dynamodb:Scan
+  #       - dynamodb:GetItem
+  #       - dynamodb:PutItem
+  #       - dynamodb:UpdateItem
+  #       - dynamodb:DeleteItem
+  #     Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/alexa-${self:service.name}-${self:provider.stage}"
 
 functions:
   handler:
@@ -24,3 +43,4 @@ functions:
     environment:
       TZ: ${file(./config/config.yml):${self:provider.stage}.timezone}
       APP_ID: ${file(./config/config.yml):${self:provider.stage}.alexa.APP_ID}
+      # DYNAMODB_TABLE: alexa-${self:service.name}-${self:provider.stage} # uncomment if you use dynamodb
