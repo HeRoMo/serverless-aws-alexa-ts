@@ -4,10 +4,11 @@
   "description": "A template of Serverless framework for Alexa skill",
   "main": "index.js",
   "scripts": {
-    "compile": "./node_modules/.bin/serverless webpack",
-    "test": "./node_modules/.bin/jest --config jest.json",
-    "deploy": "./node_modules/.bin/serverless deploy",
-    "package": "./node_modules/.bin/serverless package",
+    "test": "npm run sls:webpack && npm run jest",
+    "jest": "./node_modules/.bin/jest --config jest.json",
+    "sls:webpack": "./node_modules/.bin/serverless webpack",
+    "sls:package": "./node_modules/.bin/serverless package",
+    "sls:deploy": "./node_modules/.bin/serverless deploy",
     "ask:get-model": "ask api get-model -s $npm_config_skill_id -l ja-JP > interaction_models/model_ja-JP.json",
     "ask:update-model": "ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
   },
