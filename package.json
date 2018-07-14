@@ -9,6 +9,9 @@
     "sls:webpack": "./node_modules/.bin/serverless webpack",
     "sls:package": "./node_modules/.bin/serverless package",
     "sls:deploy": "./node_modules/.bin/serverless deploy",
+    "sls:dynamodb:install": "./node_modules/.bin/serverless dynamodb install",
+    "sls:dynamodb:remove": "./node_modules/.bin/serverless dynamodb remove",
+    "sls:dynamodb:start": "./node_modules/.bin/serverless dynamodb start",
     "ask:get-model": "ask api get-model -s $npm_config_skill_id -l ja-JP > interaction_models/model_ja-JP.json",
     "ask:update-model": "ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
   },
