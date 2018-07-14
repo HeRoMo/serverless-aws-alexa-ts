@@ -9,5 +9,8 @@ jspm_packages
 # Webpack directories
 .webpack
 
+# jest
+coverage
+
 config/*
 !config/config-template.yml
