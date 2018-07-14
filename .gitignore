@@ -13,4 +13,4 @@ jspm_packages
 coverage
 
 config/*
-!config/config-template.yml
+!config/config.yml.template
