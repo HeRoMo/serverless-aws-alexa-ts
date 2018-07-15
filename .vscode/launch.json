@@ -19,7 +19,7 @@
           "${workspaceRoot}/.webpack/service/*.js"
         ],
         "sourceMaps": true,
-        "preLaunchTask": "npm: compile"
+        "preLaunchTask": "npm: sls:webpack"
       },
       {
         "type": "node",
