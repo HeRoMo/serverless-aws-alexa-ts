@@ -106,7 +106,7 @@ Run the following command to install local DynamoDB.
 $ npm run sls:dynamodb:start
 ```
 
-For details, please see [Serverless Dynamodb Local Plugin](https://github.com/99xt/serverless-dynamodb-local)
+For details, please see [Serverless Dynamodb Local Plugin](https://github.com/99xt/serverless-dynamodb-local)
 
 ## License
 MIT
