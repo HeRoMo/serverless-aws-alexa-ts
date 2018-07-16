@@ -12,7 +12,7 @@ declare module 'ssml-builder' {
     paragraph(paragraph: string): this;
     sentence(saying: string): this;
     pause(duration: string): this;
-    pauseByStrength(strength: string): this;
+    pauseByStrength(strength: 'none'|'x-weak'|'weak'|'medium'|'strong'|'x-strong'): this;
     audio(url: string, callback?: Function): this;
     spell(word: string): this;
     spellSlowly(word: string, delay: string): this;
