@@ -1,6 +1,8 @@
 import {SkillResponse, VirtualAlexa} from "virtual-alexa";
+import {handler} from "../../index";
+
 const alexa = VirtualAlexa.Builder()
-  .handler("./.webpack/service/index.handler")
+  .handler(handler)
   .interactionModelFile("./interaction_models/model_ja-JP.json")
   .create();
 
