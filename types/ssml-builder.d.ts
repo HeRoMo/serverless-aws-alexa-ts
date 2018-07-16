@@ -26,7 +26,7 @@ declare module 'ssml-builder' {
       }): this;
     partOfSpeech(options: { word: string, role?: string }): this;
     phoneme(alphabet: string, ph: string, word: string): this;
-    emphasis(level: string, word: string): this;
+    emphasis(level: 'strong'|'moderate'|'reduced', word: string): this;
     prosody(
       attributes: {
         rate?: 'x-slow'|'slow'|'medium'|'fast'|'x-fast',
