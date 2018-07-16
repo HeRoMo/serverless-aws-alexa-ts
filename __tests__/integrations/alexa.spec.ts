@@ -10,7 +10,7 @@ describe("launchResponse", async () => {
   it("response launch message", async () => {
     const launchResponse = await alexa.launch();
     const responseSSML = launchResponse.response.outputSpeech.ssml;
-    expect(responseSSML).toBe("<speak>Welcome to the Alexa Skills Kit, you can say hello!</speak>");
+    expect(responseSSML).toBe("<speak>今日の気分はいかがですか？</speak>");
   });
 });
 

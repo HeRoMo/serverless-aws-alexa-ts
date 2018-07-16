@@ -5,11 +5,11 @@ const LaunchRequestHandler = {
       return handlerInput.requestEnvelope.request.type === "LaunchRequest";
   },
   handle(handlerInput: HandlerInput) {
-      const speechText = "Welcome to the Alexa Skills Kit, you can say hello!";
+      const speechText = "今日の気分はいかがですか？";
       return handlerInput.responseBuilder
           .speak(speechText)
           .reprompt(speechText)
-          .withSimpleCard("Hello World", speechText)
+          .withSimpleCard("今日の気分を教えてください。", speechText)
           .getResponse();
   },
 };
