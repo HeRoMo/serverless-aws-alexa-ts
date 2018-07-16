@@ -9,31 +9,30 @@ const FeelingIntentHandler: RequestHandler = {
   },
   handle(handlerInput: HandlerInput): Response {
     const request = handlerInput.requestEnvelope.request as IntentRequest;
-    const slot = request.intent.slots && request.intent.slots.feeling as Slot;
-    const feelingId = slot.resolutions.resolutionsPerAuthority[0].values[0].value.id;
-
+    const slot = request.intent.slots && request.intent.slots.feeling;
     let speech: string;
     const reprompt: string = new Speech().say("今日の気分を教えてください").ssml();
-    switch (feelingId) {
-      case "0":
-        speech = new Speech().say("まあ、元気だして。くよくよせずに行きましょう。").ssml();
-        break;
-      case "3":
-        speech = new Speech().say("気分上げていきましょ。").ssml();
-        break;
-      case "5":
-        speech = new Speech().say("いつもどおりで行きましょう。").ssml();
-        break;
-      case "6":
-        speech = new Speech().say("なんかいいことありそうですね！").ssml();
-      case "8":
-        speech = new Speech().say("そんなときは思い切って行動しましょう。").ssml();
-      case "10":
-        speech = new Speech().emphasis("strong", "素晴らしい!").say("張り切っていきましょう！").ssml();
-        break;
-      default:
-        speech = reprompt;
-        break;
+    if (slot.value) {
+      const feelingId = slot.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+      switch (feelingId) {
+        case "0":
+          speech = new Speech().say("まあ、元気だして。くよくよせずに行きましょう。").ssml();
+          break;
+        case "5":
+          speech = new Speech().say("いつもどおりで行きましょう。").ssml();
+          break;
+        case "8":
+          speech = new Speech().say("そんなときは思い切って行動しましょう。").ssml();
+          break;
+        case "10":
+          speech = new Speech().emphasis("strong", "素晴らしい!").say("張り切っていきましょう！").ssml();
+          break;
+        default:
+          speech = reprompt;
+          break;
+      }
+    } else {
+      speech = "そんな日もありますよね";
     }
 
     return handlerInput.responseBuilder

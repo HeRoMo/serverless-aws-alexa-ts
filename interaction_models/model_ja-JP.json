@@ -32,6 +32,7 @@
             }
           ],
           "samples": [
+            "よくわかんない",
             "今日は {feeling}",
             "今日は {feeling} な気分",
             "今日の気分は {feeling}"
