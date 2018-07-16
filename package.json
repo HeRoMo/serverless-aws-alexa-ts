@@ -13,7 +13,7 @@
     "sls:dynamodb:remove": "./node_modules/.bin/serverless dynamodb remove",
     "sls:dynamodb:start": "./node_modules/.bin/serverless dynamodb start",
     "ask:get-model": "ask api get-model -s $npm_config_skill_id -l ja-JP > interaction_models/model_ja-JP.json",
-    "ask:update-model": "ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
+    "ask:update-model": "cli-confirm 'Do you really want to update model?' && ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
   },
   "dependencies": {
     "ask-sdk": "^2.0.7",
@@ -27,6 +27,7 @@
     "@types/source-map-support": "^0.4.1",
     "@types/webpack": "^4.4.6",
     "ask-cli": "^1.4.1",
+    "cli-confirm": "^1.0.0",
     "jest": "^23.4.1",
     "serverless": "^1.28.0",
     "serverless-dynamodb-local": "^0.2.30",
