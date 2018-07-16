@@ -22,6 +22,69 @@
             "こんにちは",
             "おやすみなさい"
           ]
+        },
+        {
+          "name": "FeelingIntent",
+          "slots": [
+            {
+              "name": "feeling",
+              "type": "Feeling"
+            }
+          ],
+          "samples": [
+            "今日は {feeling}",
+            "今日は {feeling} な気分",
+            "今日の気分は {feeling}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "5",
+              "name": {
+                "value": "普通"
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "いいよ"
+              }
+            },
+            {
+              "id": "10",
+              "name": {
+                "value": "絶好調"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "いまいち",
+                "synonyms": [
+                  "あまり良くない"
+                ]
+              }
+            },
+            {
+              "id": "0",
+              "name": {
+                "value": "最低",
+                "synonyms": [
+                  "最悪"
+                ]
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "最高"
+              }
+            }
+          ],
+          "name": "Feeling"
         }
       ]
     }
