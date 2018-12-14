@@ -14,16 +14,20 @@ describe("FeelingIntent", () => {
   });
 
   it ("気分は絶好調", async () => {
-    // const response = await alexa.utter("気分は最低") as SkillResponse;
     const response = await alexa.intend("FeelingIntent", { feeling: "絶好調"}) as SkillResponse;
     const outputSpeech = response.response.outputSpeech.ssml;
     expect(outputSpeech).toContain("素晴らしい!");
   });
 
+  it ("気分は最悪", async () => {
+    const response = await alexa.intend("FeelingIntent", { feeling: "最悪"}) as SkillResponse;
+    const outputSpeech = response.response.outputSpeech.ssml;
+    expect(outputSpeech).toContain("元気だして。");
+  });
+
   it ("気分はイマイチ", async () => {
-    // const response = await alexa.utter("気分は最低") as SkillResponse;
     const response = await alexa.intend("FeelingIntent", { feeling: "イマイチ"}) as SkillResponse;
     const outputSpeech = response.response.outputSpeech.ssml;
-    expect(outputSpeech).toContain("error");
+    expect(outputSpeech).toContain("今日の気分を教えてください");
   });
 });

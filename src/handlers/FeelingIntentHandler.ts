@@ -13,7 +13,8 @@ const FeelingIntentHandler: RequestHandler = {
     let speech: string;
     const reprompt: string = new Speech().say("今日の気分を教えてください").ssml();
     if (slot.value) {
-      const feelingId = slot.resolutions.resolutionsPerAuthority[0].values[0].value.id;
+      const feelingId = slot.resolutions.resolutionsPerAuthority[0].values[0] &&
+        slot.resolutions.resolutionsPerAuthority[0].values[0].value.id;
       switch (feelingId) {
         case "0":
           speech = new Speech().say("まあ、元気だして。くよくよせずに行きましょう。").ssml();
