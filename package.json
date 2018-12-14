@@ -15,11 +15,12 @@
     "ask:update-model": "cli-confirm 'Do you really want to update model?' && ask api update-model -s $npm_config_skill_id -l ja-JP -f interaction_models/model_ja-JP.json"
   },
   "dependencies": {
-    "ask-sdk": "^2.0.7",
-    "source-map-support": "^0.5.0",
+    "ask-sdk": "^2.3.0",
+    "source-map-support": "^0.5.9",
     "ssml-builder": "^0.4.3"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/aws-lambda": "^8.10.8",
     "@types/jest": "^23.3.0",
     "@types/node": "^8.10.21",
@@ -38,6 +39,26 @@
     "typescript": "^2.9.2",
     "virtual-alexa": "^0.6.11",
     "webpack": "^4.16.1"
+=======
+    "@types/aws-lambda": "^8.10.15",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^8.10.38",
+    "@types/source-map-support": "^0.4.1",
+    "@types/webpack": "^4.4.21",
+    "ask-cli": "^1.5.2",
+    "cli-confirm": "^1.0.1",
+    "jest": "^23.6.0",
+    "serverless": "^1.35.0",
+    "serverless-dynamodb-local": "^0.2.35",
+    "serverless-webpack": "^5.2.0",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.10.0",
+    "typescript": "^3.2.2",
+    "virtual-alexa": "^0.6.14",
+    "webpack": "^4.27.1"
+>>>>>>> master
   },
   "author": "HeRoMo",
   "repository": "https://github.com/HeRoMo/serverless-aws-alexa-ts.git",
